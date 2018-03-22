@@ -24,4 +24,11 @@ message MultiHelloRequest {
 // The response message containing the greetings.
 message HelloReply {
   string message = 1; 
+  Room room = 2;
+}
+
+enum Room {
+  FIRST = 0;
+  SECOND = 1;
+  THIRD = 2;
 }

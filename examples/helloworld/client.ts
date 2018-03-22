@@ -14,7 +14,7 @@ async function main() {
   });
 
   await greeter.sayMultiHello({ name: 'world', num_greetings: 3 }).forEach(response => {
-    console.log(`Multi greeting: ${response.message}`);
+    console.log(`Multi greeting: ${response.message}, ${response.room} (${typeof response.room})`);
   });
 }
 

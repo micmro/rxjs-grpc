@@ -15,9 +15,12 @@ async function main() {
       });
     },
 
-    sayMultiHello(request) {
+    sayMultiHello(request): Observable<helloworld.HelloReply> {
       return Observable.timer(100, 500)
-        .mapTo({ message: `Hello ${request.name}` })
+        .mapTo<number, helloworld.HelloReply>({
+          message: `Hello ${request.name}`,
+          room: helloworld.Room.SECOND
+        })
         .take(request.num_greetings);
     }
 
